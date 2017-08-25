@@ -1,0 +1,1 @@
+Put secret settings.py data in settings_secret.py and add that to .gitignore
