@@ -38,7 +38,7 @@ INSTALLED_APPS = [
   'django.contrib.sessions',
   'django.contrib.messages',
   'django.contrib.staticfiles',
-  'bootstrap3',
+  'flatblocks'
 ]
 
 MIDDLEWARE = [
@@ -81,10 +81,6 @@ DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': 'professional',
-    'USER': 'jraanan',
-    'PASSWORD': 'password',
-    'HOST': '127.0.0.1',
-    'PORT': '5432', 
   }
 }
 
@@ -126,3 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, "professional", "static"),
+  os.path.join(BASE_DIR, "website", "static"),
+]
+
+# Absolute path to the directory static files should be collected to
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+ADMIN_URL_PREFIX = '/admin/'
