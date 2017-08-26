@@ -1,1 +1,2 @@
-professional/settings_secret.py*
+/professional/settings_secret.py*
+/static/

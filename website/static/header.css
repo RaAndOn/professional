@@ -1,0 +1,37 @@
+@variables color {
+  website_blue: #2DB1FF;
+  website_purple: #9473EC;
+  website_orange: #E4865F;
+  website_green: #557F65;
+}
+
+.navbar {
+  height: var(--header-height);
+}
+
+.navbar-default {
+  background-color: #557F65;
+  border-bottom: 1px solid #557F65;
+}
+
+.navbar-brand {
+  padding: 0px;
+  height: var(--header-height);
+}
+
+.navbar-brand>img {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  width: auto;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-nav li a {
+  line-height: var(--header-height);
+  padding: 0px 20px 0px 20px;
+  font-size: 30px;
+}
