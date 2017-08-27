@@ -1,0 +1,25 @@
+footer {
+  background: white;
+  border-top: 3px solid var(--website_orange);
+  padding-top: 10px;
+  height: 40px;
+}
+
+footer a {
+  color: black;
+}
+
+.fixed-bottom {
+  padding-right: 0; /*15px in bootstrap.css*/
+  padding-left: 0;  /*idem*/
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer-centered {
+  display: table;
+  margin: 0 auto;
+  float: none;
+  height: auto;
+  width: auto;
+}

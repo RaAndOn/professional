@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'website.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'footer.css' %}">
     <script src="{% static 'admin/js/vendor/jquery/jquery.min.js' %}"></script>
     <link href="{% static 'images/favicon.png' %}" rel="icon" type="image/png" />
     {% block  'page_css' %}{% endblock %}
@@ -15,6 +16,7 @@
     <div id="main" class="container-fluid">
       {% include 'header.html' %}
       {% block 'main_content' %}{% endblock %}
+      {% include 'footer.html' %}
     </div>
   </body>
 </html>
