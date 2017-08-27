@@ -19,6 +19,35 @@
 
 body { 
   padding-top: 65px;
-  color: red;
+  color: black;
   font-family: BebasNeue, Arial;
+}
+
+.home-intro {
+  font-family: Arial;
+}
+
+.home-name-container {
+  display:block;
+  padding: 20px;
+  text-align:center;
+}
+
+.home-name {
+  font-size: 50px;
+  display:inline-block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.centered {
+  display: table;
+  margin: 0 auto;
+  float: none;
+  height: auto;
+  width: auto;
+}
+
+img.centered {
+  padding: 20px;
 }

@@ -2,12 +2,14 @@
 <html>
   <head>
     <title>Joshua Ra'anan</title>
-     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'website.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
-     {% block  'page_css' %}{% endblock %}
-     <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
-     {% block 'page_js' %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'website.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
+    <script src="{% static 'admin/js/vendor/jquery/jquery.min.js' %}"></script>
+    <link href="{% static 'images/favicon.png' %}" rel="icon" type="image/png" />
+    {% block  'page_css' %}{% endblock %}
+    <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
+    {% block 'page_js' %}{% endblock %}
   </head>
   <body>
     <div id="main" class="container-fluid">
