@@ -1,17 +1,10 @@
-@variables color {
-  website_blue: #2DB1FF;
-  website_purple: #9473EC;
-  website_orange: #E4865F;
-  website_green: #557F65;
-}
-
 .navbar {
   height: var(--header-height);
 }
 
 .navbar-default {
-  background-color: #557F65;
-  border-bottom: 1px solid #557F65;
+  background-color: var(--website_green);
+  border-bottom: 1px solid var(--website_green);
 }
 
 .navbar-brand {

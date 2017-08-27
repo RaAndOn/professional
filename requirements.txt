@@ -1,4 +1,4 @@
 django==1.11.4
 psycopg2==2.7.3
-django-generic-flatblocks==1.1.1
 django-flatblocks==0.9.4
+django-jquery==3.1.0
