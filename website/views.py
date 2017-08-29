@@ -8,8 +8,53 @@ from django.views.generic import TemplateView
 
 class HomeView(TemplateView):
 
-    template_name = "home.html"
+  template_name = "home.html"
 
-    def get_context_data(self, **kwargs):
-        context = super(HomeView, self).get_context_data(**kwargs)
-        return context
+  def get_context_data(self, **kwargs):
+    context = super(HomeView, self).get_context_data(**kwargs)
+    return context
+
+
+class ContactView(TemplateView):
+
+  template_name = "contact.html"
+
+  def get_context_data(self, **kwargs):
+    context = super(ContactView, self).get_context_data(**kwargs)
+    return context
+
+
+class AboutView(TemplateView):
+
+  template_name = "about.html"
+
+  def get_context_data(self, **kwargs):
+    context = super(AboutView, self).get_context_data(**kwargs)
+    return context
+
+
+class ProjectAllView(TemplateView):
+
+  template_name = "projects_all.html"
+
+  def get_context_data(self, **kwargs):
+    context = super(ProjectAllView, self).get_context_data(**kwargs)
+    return context
+
+
+class ProjectView(TemplateView):
+
+  template_name = "project_detail.html"
+
+  def get_context_data(self, **kwargs):
+    context = super(ProjectView, self).get_context_data(**kwargs)
+    return context
+
+
+class ResumeView(TemplateView):
+
+  template_name = "resume.html"
+
+  def get_context_data(self, **kwargs):
+    context = super(ResumeView, self).get_context_data(**kwargs)
+    return context

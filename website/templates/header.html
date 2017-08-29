@@ -6,19 +6,19 @@
     </a>
     <ul class="nav navbar-nav">
       <li>
-        <a href="#">Home</a>
+        <a href="{% url 'home' %}">Home</a>
       </li>
       <li>
-        <a href="about/">About</a>
+        <a href="{% url 'about' %}">About</a>
       </li>
       <li>
-        <a href="portfolio/">Projects</a>
+        <a href="{% url 'project-all' %}">Projects</a>
       </li>
       <li>
-        <a href="resume/">Resume</a>
+        <a href="{% url 'resume' %}">Resume</a>
       </li>
       <li>
-        <a href="contact/">Contact</a>
+        <a href="{% url 'contact' %}">Contact</a>
       </li>
     </ul>
   </div>
@@ -36,19 +36,19 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="#">Home</a>
+            <a href="{% url 'home' %}">Home</a>
           </li>
           <li>
-            <a href="about/">About</a>
+            <a href="{% url 'about' %}">About</a>
           </li>
           <li>
-            <a href="portfolio/">Projects</a>
+            <a href="{% url 'project-all' %}">Projects</a>
           </li>
           <li>
-            <a href="resume/">Resume</a>
+            <a href="{% url 'resume' %}">Resume</a>
           </li>
           <li>
-            <a href="contact/">Contact</a>
+            <a href="{% url 'contact' %}">Contact</a>
           </li>
         </ul>
       </li>
