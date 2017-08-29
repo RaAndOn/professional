@@ -41,6 +41,8 @@ INSTALLED_APPS = [
   'flatblocks',
   'jquery',
   'website',
+  'reversion',
+  'tinymce'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,20 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 ADMIN_URL_PREFIX = '/admin/'
+
+################################################################
+####                         TinyMCE                         ###
+################################################################
+TINYMCE_COMPRESSOR = False
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': "advanced",
+    'relative_urls': False,
+    'convert_urls' : False,
+    'width': '750px',
+    'height': '350px',
+    'forced_root_block': "",
+    'plugins': 'advlist, lists, spellchecker',
+    'theme_advanced_buttons1': 'bold,italic,underline,strikethrough,|,sub,sup,|,fontselect,fontsizeselect,formatselect,|,forecolor,backcolor,|,charmap',
+    'theme_advanced_buttons2': 'bullist,numlist,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,image,|,outdent,indent,|,undo,redo,|,visualaid,removeformat,cleanup,code,spellchecker,help',
+}
+# TINYMCE_SPELLCHECKER = True
