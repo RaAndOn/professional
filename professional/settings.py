@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-from settings_secret import *
+# from settings_secret import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -85,6 +85,11 @@ DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': 'professional',
+    #DEFINED USING heroku config:set for prod, import settings_secret.py for dev
+    'USER': os.environ.get('DATABASE_DEFAULT_USER'),
+    'PASSWORD': os.environ.get('DATABASE_DEFAULT_PASSWORD'),
+    'HOST': os.environ.get('DATABASE_DEFAULT_HOST'),
+    'PORT':os.environ.get('DATABASE_DEFAULT_PORT'),
   }
 }
 
