@@ -13,17 +13,21 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 # from settings_secret import *
 import dj_database_url
-
-
+import professional
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+secret_path = os.path.join(os.path.dirname(professional.__file__), 'settings_secret.py')
+secret = os.path.isfile(secret_path)
 
+if secret:
+  from settings_secret import *
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8cggf_jv#0@d=ltzef@rmv%ne_lo^_xnz2+)#jzh5xh_e(l64o'
+if not secret:
+  SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,23 +90,10 @@ WSGI_APPLICATION = 'professional.wsgi.application'
 
 # DATABASE_URL=$(heroku config:get DATABASE_URL -a joshua-raanan-professional)
 
-# DATABASES = {
-#   'default': {
-#     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': 'professional',
-#     #DEFINED USING heroku config:set for prod, import settings_secret.py for dev
-#     'USER': os.environ.get('DATABASE_DEFAULT_USER'),
-#     'PASSWORD': os.environ.get('DATABASE_DEFAULT_PASSWORD'),
-#     'HOST': os.environ.get('DATABASE_DEFAULT_HOST'),
-#     'PORT':os.environ.get('DATABASE_DEFAULT_PORT'),
-#   }
-# }
-
-DATABASES = {}
-DATABASES['default'] =  dj_database_url.config(default='postgres://jraanan:password@127.0.0.1:5432/professional')
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
-
-DATABASES['default'] =  dj_database_url.config()
+if not secret:
+  DATABASES = {}
+  DATABASES['default'] =  dj_database_url.config()
+  DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -169,5 +160,5 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 # TINYMCE_SPELLCHECKER = True
 
-
-SECURE_SSL_REDIRECT = True
+if not secret:
+  SECURE_SSL_REDIRECT = True
