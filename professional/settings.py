@@ -83,8 +83,6 @@ WSGI_APPLICATION = 'professional.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASE_URL=$(heroku config:get DATABASE_URL -a joshua-raanan-professional)
-
 # DATABASES = {
 #   'default': {
 #     'ENGINE': 'django.db.backends.postgresql',
