@@ -28,7 +28,7 @@ SECRET_KEY = '8cggf_jv#0@d=ltzef@rmv%ne_lo^_xnz2+)#jzh5xh_e(l64o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['joshua-raanan-professional.herokuapp.com','joshua-raanan.com']
+ALLOWED_HOSTS = ['joshua-raanan-professional.herokuapp.com','joshua-raanan.com', 'www.joshua-raanan.com']
 
 
 # Application definition
