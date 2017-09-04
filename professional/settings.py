@@ -83,6 +83,8 @@ WSGI_APPLICATION = 'professional.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASE_URL=$(heroku config:get DATABASE_URL -a joshua-raanan-professional)
+
 # DATABASES = {
 #   'default': {
 #     'ENGINE': 'django.db.backends.postgresql',
@@ -94,6 +96,10 @@ WSGI_APPLICATION = 'professional.wsgi.application'
 #     'PORT':os.environ.get('DATABASE_DEFAULT_PORT'),
 #   }
 # }
+
+DATABASES = {}
+DATABASES['default'] =  dj_database_url.config(default='postgres://jraanan:password@127.0.0.1:5432/professional')
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 DATABASES['default'] =  dj_database_url.config()
 
