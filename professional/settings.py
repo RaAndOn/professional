@@ -28,7 +28,7 @@ SECRET_KEY = '8cggf_jv#0@d=ltzef@rmv%ne_lo^_xnz2+)#jzh5xh_e(l64o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['joshua-raanan-professional.herokuapp.com','joshua-raanan.com', 'www.joshua-raanan.com']
+ALLOWED_HOSTS = ['joshua-raanan-professional.herokuapp.com','joshua-raanan.com', 'www.joshua-raanan.com', 'localhost']
 
 
 # Application definition
@@ -44,7 +44,8 @@ INSTALLED_APPS = [
   'jquery',
   'website',
   'reversion',
-  'tinymce'
+  'tinymce',
+  'djangosecure'
 ]
 
 MIDDLEWARE = [
@@ -167,3 +168,6 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_buttons2': 'bullist,numlist,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,image,|,outdent,indent,|,undo,redo,|,visualaid,removeformat,cleanup,code,spellchecker,help',
 }
 # TINYMCE_SPELLCHECKER = True
+
+
+SECURE_SSL_REDIRECT = True
