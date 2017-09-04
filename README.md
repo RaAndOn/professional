@@ -1,8 +1,8 @@
-###PRODUCTION
+# RODUCTION
 
-##Heroku:
+## Heroku:
 
-#Hide Secrets:
+### Hide Secrets:
 
 You can avoid having your secrets in the github repository by adding them directly to Heroku as constants uing the following:
 
@@ -11,22 +11,21 @@ You can avoid having your secrets in the github repository by adding them direct
 Any constant created this way can be captured by using
 
   ```
-    os.environ.get('SECRET_KEY')
-
+    os.environ.get('SECRET_KEY')s
   ```
 
 For development, I recommend creating a 'secret_settings.py' file and adding it to your .gitignore. Then if settings_secrets.py exists
 import it to the settings, otherwiset use the 'os.environ.get('')
 
-#Push code:
+### Push code:
 
   `$ git push heroku master
 
-#Migrate changes:
+### Migrate changes:
 
   `$ heroku run python manage.py migrate`
 
-#Add domains:
+### Add domains:
 
   `$ heroku domains:add www.joshua-raanan.com -a joshua-raanan-professional`
   `$ heroku domains:add joshua-raanan.com -a joshua-raanan-professional`
@@ -43,7 +42,7 @@ Go to Hover and under the DNS tab add 2 new settings:
   HOST: @
   VALUE: joshua-raanan.com.herokudns.com
 
-#Add SSL:
+### Add SSL:
 
 Heroku is capable of handling SSL for you, simply use the command:
 
@@ -57,7 +56,7 @@ SSH into server:
 
   `$ heroku ps:exec --dyno=web.1`
 
-#Database:
+### Database:
 This site uses Postgresql. The database settings on the server, which are needed in the settings.py file, are accessible
 via the Heroku constant 'DATABASE_URL' and can be seen with the command:
 
@@ -77,14 +76,18 @@ to tthe settings.py. Which consits of Database default (used for development), a
   ```
 
 
-###DEVELOPMENT
+# DEVELOPMENT
 
-##DATABASE
+## Database
 
-###DESIGN
+# DESIGN
+
 Logo made with: https://www.canva.com/design/DACfQNJIaWw/vOxOIXQ8hySkXXDUx9Z-ZQ/edit?layouts=&utm_source=onboarding
 
-Bebas neue
-Arial
+### Fonts
+
+Header - Bebas neue
+
+Body - Arial
 
 Added setting secrets to Heroku constants
