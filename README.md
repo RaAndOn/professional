@@ -1,4 +1,4 @@
-# RODUCTION
+# PRODUCTION
 
 ## Heroku:
 
@@ -11,7 +11,7 @@ You can avoid having your secrets in the github repository by adding them direct
 Any constant created this way can be captured by using
 
   ```
-    os.environ.get('SECRET_KEY')s
+    os.environ.get('SECRET_KEY')
   ```
 
 For development, I recommend creating a 'secret_settings.py' file and adding it to your .gitignore. Then if settings_secrets.py exists
@@ -79,6 +79,24 @@ to tthe settings.py. Which consits of Database default (used for development), a
 # DEVELOPMENT
 
 ## Database
+
+SETUP POSGRES DATABASE AND SERVER
+```
+  ethel$ sudo apt-get install libpq-dev
+  ethel$ sudo apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib
+  ethel$ sudo su - postgres
+  postgres$ psql
+  postgres# CREATE DATABASE kiosk;
+  postgres# CREATE USER [DATABASE] WITH PASSWORD '[PASSWORD]';
+  postgres# ALTER ROLE [USER] SET client_encoding TO 'utf8';
+  postgres# ALTER ROLE [USER] SET default_transaction_isolation TO 'read committed';
+  postgres# ALTER ROLE [USER] SET timezone TO 'UTC';
+  postgres# GRANT ALL PRIVILEGES ON DATABASE [DATABASE] TO [USER];
+
+
+  \q
+  exit
+```
 
 # DESIGN
 
