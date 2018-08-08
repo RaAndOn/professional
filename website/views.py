@@ -6,6 +6,8 @@ from django.http import HttpResponse
 from django.template import loader
 from django.views.generic import TemplateView
 
+from website.models import *
+
 class HomeView(TemplateView):
 
   template_name = "home.html"
@@ -38,7 +40,9 @@ class ProjectAllView(TemplateView):
   template_name = "projects_all.html"
 
   def get_context_data(self, **kwargs):
+    projects = Project.objects.all()
     context = super(ProjectAllView, self).get_context_data(**kwargs)
+    context['projects'] = projects
     return context
 
 

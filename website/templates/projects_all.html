@@ -2,14 +2,24 @@
 {% load static %}
 {% load flatblocks %}
 {% block 'main_content' %}
-  <div>
+  <div class="all-projects">
     <div class="row">
       <div class="col-sm-12 home-name-container">
         <h1>Projects</h1>
       </div>
     </div>
-    <div class="row">
-      
+    <div class="container">
+      {% for project in projects %}
+      <div class="item row">
+        <div class="col-sm-12 col-md-4">
+          <img src="{% get_media_prefix %}{{ project.image }}" alt="{{ project.title }}">
+        </div>
+        <div class="col-sm-12 col-md-8">
+          <h1><a href="{{ project.slug }}">{{ project.title }}</a></h1>
+          <p class="description">{{ project.short_description }}</p>
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
   <br />
