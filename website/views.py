@@ -40,7 +40,7 @@ class ProjectAllView(TemplateView):
   template_name = "projects_all.html"
 
   def get_context_data(self, **kwargs):
-    projects = Project.objects.all()
+    projects = Project.objects.order_by('order')
     context = super(ProjectAllView, self).get_context_data(**kwargs)
     context['projects'] = projects
     return context
@@ -60,5 +60,7 @@ class ResumeView(TemplateView):
   template_name = "resume.html"
 
   def get_context_data(self, **kwargs):
+    resume = Resume.objects.first()
     context = super(ResumeView, self).get_context_data(**kwargs)
+    context['resume'] = resume
     return context

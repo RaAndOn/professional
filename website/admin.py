@@ -16,8 +16,8 @@ class ProjectAdminForm(forms.ModelForm):
 
 
 class ProjectAdmin(VersionAdmin):
-    list_display = ('id', 'title', 'subtitle', 'slug', 'featured', 'modified_datetime',)
-    list_editable = ('title', 'subtitle', 'featured',)
+    list_display = ('id', 'title', 'subtitle', 'slug', 'order', 'featured', 'modified_datetime',)
+    list_editable = ('title', 'subtitle', 'order', 'featured',)
     fields = (
         'title',
         'subtitle',
@@ -30,3 +30,18 @@ class ProjectAdmin(VersionAdmin):
     form = ProjectAdminForm
 
 admin.site.register(models.Project, ProjectAdmin)
+
+
+class ResumeAdminForm(forms.ModelForm):
+    class Meta:
+        model = models.Resume
+        exclude = ()
+
+class ResumeAdmin(VersionAdmin):
+    list_display = ('uploaded_at',)
+    fields = (
+        'document',
+        )
+    form = ResumeAdminForm
+
+admin.site.register(models.Resume, ResumeAdmin)

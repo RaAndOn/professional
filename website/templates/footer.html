@@ -2,15 +2,21 @@
 {% load flatblocks %}
 <footer class="fixed-bottom">
   <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-4">
       <h4 class="footer-centered">
         <a href="mailto:{% flatblock 'footer.email' using=false %}">{% flatblock 'footer.email' %}</a>
       </h4>
     </div>
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-4">
+      <h4 class="footer-centered">
+        <a href="{% get_media_prefix %}{{ resume.document }}" download="JoshuaRaananResume">Download my Resume</a>
+      </h4>
+    </div>
+    <div class="col-sm-12 col-md-4">
       <h4 class="footer-centered">
         <a href="{% flatblock 'footer.github' using=false %}">Checkout my GitHub</a>
       </h4>
     </div>
   </div>
 </footer>
+

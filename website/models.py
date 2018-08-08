@@ -82,6 +82,7 @@ class FeatureMixin(models.Model):
             )
     created_datetime = models.DateTimeField(auto_now_add=True)
     modified_datetime = models.DateTimeField(auto_now=True)
+    order = models.IntegerField(default=1)
 
     def generate_slug(self):
         return default_slugify(self.title)
@@ -99,3 +100,12 @@ class Project(FeatureMixin):
     @models.permalink
     def get_absolute_url(self):
         return ('projects', [self.slug])
+
+class Resume(models.Model):
+    def __unicode__(self):
+        return "Resume"
+
+    objects = FeatureManager()
+
+    document = models.FileField(upload_to='documents')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
