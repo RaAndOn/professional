@@ -19,7 +19,7 @@ import it to the settings, otherwiset use the 'os.environ.get('')
 
 ### Push code:
 
-  `$ git push heroku master
+  `$ git push heroku master`
 
 ### Migrate changes:
 

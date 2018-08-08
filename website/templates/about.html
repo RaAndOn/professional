@@ -2,14 +2,16 @@
 {% load static %}
 {% load flatblocks %}
 {% block 'main_content' %}
-  <div>
+  <div class="about-me">
     <div class="row">
       <div class="col-sm-12 home-name-container">
         <h1>About Me</h1>
       </div>
     </div>
     <div class="row">
-      
+      <div class="container description">
+        {% flatblock 'aboutme' %}
+      </div>
     </div>
   </div>
   <br />
