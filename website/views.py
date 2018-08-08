@@ -52,6 +52,7 @@ class ProjectView(TemplateView):
 
   def get_context_data(self, **kwargs):
     context = super(ProjectView, self).get_context_data(**kwargs)
+    context['project'] = Project.objects.filter(pk=id(self))
     return context
 
 
@@ -60,7 +61,5 @@ class ResumeView(TemplateView):
   template_name = "resume.html"
 
   def get_context_data(self, **kwargs):
-    resume = Resume.objects.first()
     context = super(ResumeView, self).get_context_data(**kwargs)
-    context['resume'] = resume
     return context
