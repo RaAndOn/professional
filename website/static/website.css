@@ -51,3 +51,16 @@ body {
 img.centered {
   padding: 20px;
 }
+
+.all-projects .container img {
+  width: 100%;
+}
+
+.all-projects .container .item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.all-projects .container .item .description {
+  font-family: Arial;
+}
