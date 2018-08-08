@@ -82,7 +82,7 @@ https://devcenter.heroku.com/articles/s3#pass-through-uploads
 https://devcenter.heroku.com/articles/s3-upload-python
 https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
 
-Locally the uploaded images are stored in the media/ folder
+Locally the uploaded images are stored in the `media/` folder
 
 # DEVELOPMENT
 
