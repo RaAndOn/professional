@@ -70,15 +70,16 @@ img.centered {
   width: 100%;
 }
 
-.detail-project .row {
-  padding: 100px;
+.detail-project .description {
+  padding: 40px;
 }
 
 .detail-project .header {
   background-color: grey;
+  padding: 100px;
 }
 
-.detail-project .description {
+.detail-project p {
   font-family: Arial;
   font-size: 24px;
 }

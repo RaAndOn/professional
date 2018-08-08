@@ -10,12 +10,14 @@
         </div>
         <div class="col-sm-8">
           <h1>{{ object.title }} - {{ object.subtitle }}</h1>
-          <p class="description">{{ object.short_description }}</p>
+          <p>{{ object.short_description }}</p>
         </div>
       </div>
     </div>
-    <div class="row">
-      <p class="description">{{ object.body | safe }}</p>
+    <div class="row description">
+      <div class="container">
+        <p>{{ object.body | safe }}</p>
+      </div>
     </div>
   </div>
   <br />
