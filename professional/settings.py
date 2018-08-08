@@ -38,13 +38,13 @@ if not secret:
   #https://devcenter.heroku.com/articles/s3-upload-python
   #https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
   AWS_LOCATION = 'media'
-  MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
   AWS_STORAGE_BUCKET_NAME = 'joshua-raanan-professional'
   AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
   AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
   }
   DEFAULT_FILE_STORAGE = 'professional.storage_backends.MediaStorage'
+  MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
