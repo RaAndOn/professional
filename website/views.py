@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from django.views.generic import TemplateView
+from django.views.generic import DetailView
 
 from website.models import *
 
@@ -46,13 +47,13 @@ class ProjectAllView(TemplateView):
     return context
 
 
-class ProjectView(TemplateView):
+class ProjectView(DetailView):
 
   template_name = "project_detail.html"
+  model = Project
 
   def get_context_data(self, **kwargs):
     context = super(ProjectView, self).get_context_data(**kwargs)
-    context['project'] = Project.objects.filter(pk=id(self))
     return context
 
 
