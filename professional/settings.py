@@ -25,10 +25,26 @@ if secret:
   from settings_secret import *
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
+  # MEDIA Variables are used for user uploaded images locally
+  MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+  MEDIA_URL = '/media/'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if not secret:
   SECRET_KEY = os.environ.get('SECRET_KEY')
+
+  #AWS Setup
+  #https://devcenter.heroku.com/articles/s3#pass-through-uploads
+  #https://devcenter.heroku.com/articles/s3-upload-python
+  #https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
+  AWS_LOCATION = 'media'
+  MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+  AWS_STORAGE_BUCKET_NAME = 'joshua-raanan-professional'
+  AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+  AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+  }
+  DEFAULT_FILE_STORAGE = 'professional.storage_backends.MediaStorage'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -50,7 +66,8 @@ INSTALLED_APPS = [
   'website',
   'reversion',
   'tinymce',
-  'djangosecure'
+  'djangosecure',
+  'storages'
 ]
 
 MIDDLEWARE = [
@@ -129,10 +146,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# MEDIA Variables are used for user uploaded images
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

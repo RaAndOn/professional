@@ -75,6 +75,14 @@ to tthe settings.py. Which consits of Database default (used for development), a
     DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
   ```
 
+## Media
+
+In production the uploaded images are stored in AWS.
+https://devcenter.heroku.com/articles/s3#pass-through-uploads
+https://devcenter.heroku.com/articles/s3-upload-python
+https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
+
+Locally the uploaded images are stored in the media/ folder
 
 # DEVELOPMENT
 
