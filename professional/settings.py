@@ -46,11 +46,12 @@ if not secret:
   DEFAULT_FILE_STORAGE = 'professional.storage_backends.MediaStorage'
   MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
-# SECURITY WARNING: don't run with debug turned on in production!
+  STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEBUG = True
 
-ALLOWED_HOSTS = ['joshua-raanan-professional.herokuapp.com','joshua-raanan.com', 'www.joshua-raanan.com', 'localhost']
 
+ALLOWED_HOSTS = ['joshua-raanan-professional.herokuapp.com','joshua-raanan.com', 'www.joshua-raanan.com', 'localhost']
 
 # Application definition
 
@@ -78,6 +79,7 @@ MIDDLEWARE = [
   'django.contrib.auth.middleware.AuthenticationMiddleware',
   'django.contrib.messages.middleware.MessageMiddleware',
   'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'professional.urls'
@@ -151,14 +153,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+# Absolute path to the directory static files should be collected to
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, 'static'),
   os.path.join(BASE_DIR, "professional", "static"),
   os.path.join(BASE_DIR, "website", "static"),
 ]
-
-# Absolute path to the directory static files should be collected to
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 ADMIN_URL_PREFIX = '/admin/'
 
