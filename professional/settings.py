@@ -28,6 +28,7 @@ if secret:
   # MEDIA Variables are used for user uploaded images locally
   MEDIA_ROOT = os.path.join(BASE_DIR, "media")
   MEDIA_URL = '/media/'
+  Debug = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if not secret:
@@ -48,8 +49,7 @@ if not secret:
   MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
   STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-DEBUG = True
+  DEBUG = False # See this link for fixing static files on DEBUG False
 
 
 ALLOWED_HOSTS = ['joshua-raanan-professional.herokuapp.com','joshua-raanan.com', 'www.joshua-raanan.com', 'localhost']
@@ -74,13 +74,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
   'django.middleware.security.SecurityMiddleware',
+  'whitenoise.middleware.WhiteNoiseMiddleware',
   'django.contrib.sessions.middleware.SessionMiddleware',
   'django.middleware.common.CommonMiddleware',
   'django.middleware.csrf.CsrfViewMiddleware',
   'django.contrib.auth.middleware.AuthenticationMiddleware',
   'django.contrib.messages.middleware.MessageMiddleware',
   'django.middleware.clickjacking.XFrameOptionsMiddleware',
-  'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'professional.urls'
@@ -155,10 +155,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Absolute path to the directory static files should be collected to
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_DIRS = [
-  os.path.join(BASE_DIR, 'static'),
   os.path.join(BASE_DIR, "professional", "static"),
   os.path.join(BASE_DIR, "website", "static"),
 ]
