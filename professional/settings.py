@@ -48,7 +48,6 @@ if not secret:
   DEFAULT_FILE_STORAGE = 'professional.storage_backends.MediaStorage'
   MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
-  STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
   DEBUG = False # See this link for fixing static files on DEBUG False
 
 
