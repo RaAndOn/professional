@@ -32,6 +32,7 @@ if secret:
 # SECURITY WARNING: keep the secret key used in production secret!
 if not secret:
   SECRET_KEY = os.environ.get('SECRET_KEY')
+  PREPEND_WWW = True
 
   #AWS Setup
   #https://devcenter.heroku.com/articles/s3#pass-through-uploads
