@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load flatblocks %}
+{% block 'main_content' %}
+  <div class="detail-experience">
+    <div class="row header">
+      <div class="container">
+        <div class="col-sm-4">
+          <img src="{% get_media_prefix %}{{ object.wide_image }}" alt="{{ object.title }}">
+        </div>
+        <div class="col-sm-8">
+          <h1>{{ object.title }} - {{ object.subtitle }}</h1>
+          <p>{{ object.short_description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row description">
+      <div class="container">
+        <p>{{ object.body | safe }}</p>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+{% endblock %}

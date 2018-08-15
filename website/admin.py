@@ -32,6 +32,30 @@ class ProjectAdmin(VersionAdmin):
 admin.site.register(models.Project, ProjectAdmin)
 
 
+class ExperienceAdminForm(forms.ModelForm):
+    class Meta:
+        model = models.Experience
+        widgets = {'short_description': TinyMCE,}
+        exclude = ()
+
+
+class ExperienceAdmin(VersionAdmin):
+    list_display = ('id', 'title', 'subtitle', 'slug', 'order', 'featured', 'modified_datetime',)
+    list_editable = ('title', 'subtitle', 'order', 'featured',)
+    fields = (
+        'title',
+        'subtitle',
+        'image',
+        'wide_image',
+        'short_description',
+        'body',
+        'featured',
+        )
+    form = ExperienceAdminForm
+
+admin.site.register(models.Experience, ExperienceAdmin)
+
+
 class ResumeAdminForm(forms.ModelForm):
     class Meta:
         model = models.Resume

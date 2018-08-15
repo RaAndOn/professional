@@ -101,6 +101,18 @@ class Project(FeatureMixin):
     def get_absolute_url(self):
         return ('projects', [self.slug])
 
+
+class Experience(FeatureMixin):
+    """ Experience model  """
+
+    def __unicode__(self):
+        return self.title
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('experience', [self.slug])
+
+
 class Resume(models.Model):
     def __unicode__(self):
         return "Resume"

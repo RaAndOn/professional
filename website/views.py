@@ -41,7 +41,7 @@ class ProjectAllView(TemplateView):
   template_name = "projects_all.html"
 
   def get_context_data(self, **kwargs):
-    projects = Project.objects.order_by('order')
+    projects = Project.objects.active.order_by('order')
     context = super(ProjectAllView, self).get_context_data(**kwargs)
     context['projects'] = projects
     return context
@@ -54,6 +54,27 @@ class ProjectView(DetailView):
 
   def get_context_data(self, **kwargs):
     context = super(ProjectView, self).get_context_data(**kwargs)
+    return context
+
+
+class ExperienceAllView(TemplateView):
+
+  template_name = "experience_all.html"
+
+  def get_context_data(self, **kwargs):
+    experiences = Experience.objects.active.order_by('order')
+    context = super(ExperienceAllView, self).get_context_data(**kwargs)
+    context['experiences'] = experiences
+    return context
+
+
+class ExperienceView(DetailView):
+
+  template_name = "experience_detail.html"
+  model = Experience
+
+  def get_context_data(self, **kwargs):
+    context = super(ExperienceView, self).get_context_data(**kwargs)
     return context
 
 

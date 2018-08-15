@@ -28,7 +28,7 @@ if secret:
   # MEDIA Variables are used for user uploaded images locally
   MEDIA_ROOT = os.path.join(BASE_DIR, "media")
   MEDIA_URL = '/media/'
-  Debug = True
+  DEBUG = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if not secret:
