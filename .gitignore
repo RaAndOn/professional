@@ -1,5 +1,6 @@
 /professional/settings_secret.py*
-/static/
+/static/*
+!/static/placeholderfile
 /env/
 *.pyc
 media/*
