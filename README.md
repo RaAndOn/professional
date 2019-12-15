@@ -4,7 +4,7 @@
 
 ### Hide Secrets:
 
-You can avoid having your secrets in the github repository by adding them directly to Heroku as constants uing the following:
+You can avoid having your secrets in the github repository by adding them directly to Heroku as constants using the following:
 
   `$ heroku config:set SECRET_KEY=`
 
@@ -15,7 +15,7 @@ Any constant created this way can be captured by using
   ```
 
 For development, I recommend creating a 'secret_settings.py' file and adding it to your .gitignore. Then if settings_secrets.py exists
-import it to the settings, otherwiset use the 'os.environ.get('')
+import it to the settings, otherwise use the 'os.environ.get('')'
 
 ### Push code:
 
