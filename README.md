@@ -15,7 +15,7 @@ Any constant created this way can be captured by using
   ```
 
 For development, I recommend creating a 'secret_settings.py' file and adding it to your .gitignore. Then if settings_secrets.py exists
-import it to the settings, otherwiset use the 'os.environ.get('')'
+import it to the settings, otherwise use the 'os.environ.get('')'
 
 ### Push code:
 
