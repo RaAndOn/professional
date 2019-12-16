@@ -62,12 +62,12 @@ via the Heroku constant 'DATABASE_URL' and can be seen with the command:
 
   ` $heroku config:get DATABASE_URL -a joshua-raanan-professional`
 
-This returns a uri borken down into:
+This returns a uri broken down into:
 
 postgres://username:password@host:port/name
 
 However, in django this can be parsed with the dj-database-url package. Add this to the requirements.txt and add the following
-to tthe settings.py. Which consits of Database default (used for development), and then overriding that for production.
+to the settings.py. Which consists of Database default (used for development), and then overriding that for production.
   ```
     import dj_database_url
     DATABASES = {}
