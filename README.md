@@ -75,6 +75,9 @@ to the settings.py. Which consists of Database default (used for development), a
     DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
   ```
 
+### Python Version
+Specify the version of python to use when deploying in the `runtime.txt` file.
+
 ## Media
 
 In production the uploaded images are stored in AWS.
