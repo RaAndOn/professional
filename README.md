@@ -89,7 +89,21 @@ Locally the uploaded images are stored in the `media/` folder
 
 # DEVELOPMENT
 
-## Database
+## Setup
+
+### Provide Required Values
+
+Create a file called `development_settings.py` with the following contents:
+
+```
+#!/usr/bin/env python
+
+SECRET_KEY = "ThisIsntTheActualSecretKey"
+```
+The actual secret key is stored on Heroku, but the existence of this file will cause django to run
+the site using development settings.
+
+### Database
 
 SETUP POSGRES DATABASE AND SERVER
 ```
@@ -97,14 +111,12 @@ SETUP POSGRES DATABASE AND SERVER
   ethel$ sudo apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib
   ethel$ sudo su - postgres
   postgres$ psql
-  postgres# CREATE DATABASE kiosk;
-  postgres# CREATE USER [DATABASE] WITH PASSWORD '[PASSWORD]';
+  postgres# CREATE DATABASE professional;
+  postgres# CREATE USER [USER] WITH PASSWORD '[PASSWORD]';
   postgres# ALTER ROLE [USER] SET client_encoding TO 'utf8';
   postgres# ALTER ROLE [USER] SET default_transaction_isolation TO 'read committed';
   postgres# ALTER ROLE [USER] SET timezone TO 'UTC';
   postgres# GRANT ALL PRIVILEGES ON DATABASE [DATABASE] TO [USER];
-
-
   \q
   exit
 ```

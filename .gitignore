@@ -1,4 +1,4 @@
-/professional/settings_secret.py*
+development_settings.py*
 /static/*
 !/static/placeholderfile
 /env/

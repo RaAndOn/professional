@@ -11,27 +11,26 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-# from settings_secret import *
 import dj_database_url
 import professional
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-secret_path = os.path.join(os.path.dirname(professional.__file__), 'settings_secret.py')
-secret = os.path.isfile(secret_path)
+development_file_path = os.path.join(BASE_DIR, 'development_settings.py')
+development = os.path.isfile(development_file_path)
 
-if secret:
-  from settings_secret import *
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
+if development:
+  from development_settings import *
+  # Quick-start development settings - unsuitable for production
+  # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
   # MEDIA Variables are used for user uploaded images locally
   MEDIA_ROOT = os.path.join(BASE_DIR, "media")
   MEDIA_URL = '/media/'
   DEBUG = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
-if not secret:
+if not development:
   SECRET_KEY = os.environ.get('SECRET_KEY')
   PREPEND_WWW = True
 
@@ -109,9 +108,19 @@ WSGI_APPLICATION = 'professional.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASE_URL=$(heroku config:get DATABASE_URL -a joshua-raanan-professional)
+if development:
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'professional',
+        'USER': 'admin',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+  }
 
-if not secret:
+if not development:
   DATABASES = {}
   DATABASES['default'] =  dj_database_url.config()
   DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
@@ -180,5 +189,5 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 # TINYMCE_SPELLCHECKER = True
 
-if not secret:
+if not development:
   SECURE_SSL_REDIRECT = True
