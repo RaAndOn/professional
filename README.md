@@ -121,6 +121,16 @@ SETUP POSGRES DATABASE AND SERVER
   exit
 ```
 
+### Testing
+```
+python3 -Wa manage.py test
+```
+
+### Running the Website
+```
+python3 manage.py runserver
+```
+
 # DESIGN
 
 Logo made with: https://www.canva.com/design/DACfQNJIaWw/vOxOIXQ8hySkXXDUx9Z-ZQ/edit?layouts=&utm_source=onboarding
