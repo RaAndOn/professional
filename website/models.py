@@ -97,7 +97,6 @@ class Project(FeatureMixin):
     def __unicode__(self):
         return self.title
 
-    @models.permalink
     def get_absolute_url(self):
         return ('projects', [self.slug])
 
@@ -108,7 +107,6 @@ class Experience(FeatureMixin):
     def __unicode__(self):
         return self.title
 
-    @models.permalink
     def get_absolute_url(self):
         return ('experience', [self.slug])
 
