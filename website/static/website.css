@@ -3,24 +3,30 @@
 */
 
 :root {
-  --website_blue: #2DB1FF;
+  --website_blue: #73A8C2;
   --website_purple: #9473EC;
-  --website_orange: #E4865F;
+  --website_yellow: #FFDC92;
+  --website_orange: #FFB492;
   --website_green: #557F65;
-  --header-height: 75px;
+  --header-height: 60px;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'BebasNeue';
   src: url('fonts/BebasNeue.ttf') format('truetype'),
        url('fonts/BebasNeue.woff') format('woff'),
        url('fonts/BebasNeue.otf') format('opentype');
+} */
+
+@font-face {
+  font-family: 'CenturyGothic';
+  src: url('fonts/CenturyGothic.ttf') format('truetype');
 }
 
 body { 
   padding-top: 65px;
   color: black;
-  font-family: BebasNeue, Arial;
+  font-family: CenturyGothic;
   line-height: 1.5;
 }
 

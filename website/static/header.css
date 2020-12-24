@@ -3,8 +3,8 @@
 }
 
 .navbar-default {
-  background-color: var(--website_green);
-  border-bottom: 1px solid var(--website_green);
+  background-color: var(--website_blue);
+  border-bottom: 1px solid var(--website_blue);
 }
 
 .navbar-brand {
@@ -21,6 +21,10 @@
 
 .navbar-default .navbar-nav>li>a {
   color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: var(--website_yellow);
 }
 
 .navbar-nav li a {
