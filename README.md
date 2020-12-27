@@ -27,20 +27,20 @@ import it to the settings, otherwise use the 'os.environ.get('')'
 
 ### Add domains:
 
-  `$ heroku domains:add www.joshua-raanan.com -a joshua-raanan-professional`
-  `$ heroku domains:add joshua-raanan.com -a joshua-raanan-professional`
+  `$ heroku domains:add www.michellexiyueli.com -a michellexiyueli-professional`
+  `$ heroku domains:add michellexiyueli.com -a michellexiyueli-professional`
 
 Go to Hover and under the DNS tab add 2 new settings:
 
   Hover -> DNS
   TYPE: CNAME
   HOST: www
-  VALUE: www.joshua-raanan.com.herokudns.com
+  VALUE: www.michellexiyueli.com.herokudns.com
 
   Hover -> DNS
   TYPE: CNAME
   HOST: @
-  VALUE: joshua-raanan.com.herokudns.com
+  VALUE: michellexiyueli.com.herokudns.com
 
 ### Add SSL:
 
@@ -60,7 +60,7 @@ SSH into server:
 This site uses Postgresql. The database settings on the server, which are needed in the settings.py file, are accessible
 via the Heroku constant 'DATABASE_URL' and can be seen with the command:
 
-  ` $heroku config:get DATABASE_URL -a joshua-raanan-professional`
+  ` $heroku config:get DATABASE_URL -a michellexiyueli-professional`
 
 This returns a uri broken down into:
 

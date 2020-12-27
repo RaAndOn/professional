@@ -39,7 +39,7 @@ if not development:
   #https://devcenter.heroku.com/articles/s3-upload-python
   #https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
   AWS_LOCATION = 'media'
-  AWS_STORAGE_BUCKET_NAME = 'joshua-raanan-professional'
+  AWS_STORAGE_BUCKET_NAME = 'michellexiyueli-professional'
   AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
   AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
@@ -50,7 +50,7 @@ if not development:
   DEBUG = False # See this link for fixing static files on DEBUG False
 
 
-ALLOWED_HOSTS = ['joshua-raanan-professional.herokuapp.com','joshua-raanan.com', 'www.joshua-raanan.com', 'localhost']
+ALLOWED_HOSTS = ['michellexiyueli-professional.herokuapp.com','michellexiyueli.com', 'www.michellexiyueli.com', 'localhost']
 
 # Application definition
 
