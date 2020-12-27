@@ -9,11 +9,11 @@
       </div>
     </div>
     <div class="container">
-      {% for teaching in teachings %}
+      {% for entry in teaching %}
       <div class="item row">
         <div class="col-sm-12">
-          <h1><a href="{{ teaching.slug }}">{{ teaching.title }} - {{ teaching.subtitle }}</a></h1>
-          <p class="description">{{ teaching.body }}</p>
+          <h1>{{ entry.title }} - {{ entry.subtitle }}</h1>
+          <div class="description">{{ entry.body | safe }}</div>
         </div>
       </div>
       {% endfor %}
