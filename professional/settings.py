@@ -175,6 +175,7 @@ ADMIN_URL_PREFIX = '/admin/'
 ################################################################
 ####                         TinyMCE                         ###
 ################################################################
+TINYMCE_COMPRESSOR = False # This needs to be False it doesn't work
 TINYMCE_DEFAULT_CONFIG = {
     "height": "320px",
     "width": "960px",
