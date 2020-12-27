@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load flatblocks %}
+{% block 'main_content' %}
+  <div class="all-teaching">
+    <div class="row">
+      <div class="col-sm-12 home-name-container">
+        <h1>Teaching</h1>
+      </div>
+    </div>
+    <div class="container">
+      {% for teaching in teachings %}
+      <div class="item row">
+        <div class="col-sm-12">
+          <h1><a href="{{ teaching.slug }}">{{ teaching.title }} - {{ teaching.subtitle }}</a></h1>
+          <p class="description">{{ teaching.body }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+{% endblock %}

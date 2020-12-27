@@ -8,52 +8,53 @@ from website import models
 from tinymce.widgets import TinyMCE
 from reversion.admin import VersionAdmin
 
-class ProjectAdminForm(forms.ModelForm):
+from django import forms
+from tinymce.widgets import TinyMCE
+
+class ResearchAdminForm(forms.ModelForm):
+
+    body = forms.CharField(widget=TinyMCE())
+
     class Meta:
-        model = models.Project
-        widgets = {'short_description': TinyMCE,}
+        model = models.Research
         exclude = ()
 
 
-class ProjectAdmin(VersionAdmin):
+class ResearchAdmin(VersionAdmin):
     list_display = ('id', 'title', 'subtitle', 'slug', 'order', 'featured', 'modified_datetime',)
     list_editable = ('title', 'subtitle', 'order', 'featured',)
     fields = (
         'title',
         'subtitle',
-        'image',
-        'wide_image',
-        'short_description',
         'body',
         'featured',
         )
-    form = ProjectAdminForm
+    form = ResearchAdminForm
 
-admin.site.register(models.Project, ProjectAdmin)
+admin.site.register(models.Research, ResearchAdmin)
 
 
-class ExperienceAdminForm(forms.ModelForm):
+class TeachingAdminForm(forms.ModelForm):
+
+    body = forms.CharField(widget=TinyMCE())
+
     class Meta:
-        model = models.Experience
-        widgets = {'short_description': TinyMCE,}
+        model = models.Teaching
         exclude = ()
 
 
-class ExperienceAdmin(VersionAdmin):
+class TeachingAdmin(VersionAdmin):
     list_display = ('id', 'title', 'subtitle', 'slug', 'order', 'featured', 'modified_datetime',)
     list_editable = ('title', 'subtitle', 'order', 'featured',)
     fields = (
         'title',
         'subtitle',
-        'image',
-        'wide_image',
-        'short_description',
         'body',
         'featured',
         )
-    form = ExperienceAdminForm
+    form = TeachingAdminForm
 
-admin.site.register(models.Experience, ExperienceAdmin)
+admin.site.register(models.Teaching, TeachingAdmin)
 
 
 class ResumeAdminForm(forms.ModelForm):

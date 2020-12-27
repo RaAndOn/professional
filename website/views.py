@@ -36,45 +36,25 @@ class AboutView(TemplateView):
     return context
 
 
-class ProjectAllView(TemplateView):
+class TeachingAllView(TemplateView):
 
-  template_name = "projects_all.html"
+  template_name = "teaching_all.html"
 
   def get_context_data(self, **kwargs):
-    projects = Project.objects.active.order_by('order')
-    context = super(ProjectAllView, self).get_context_data(**kwargs)
-    context['projects'] = projects
+    teaching = Teaching.objects.active.order_by('order')
+    context = super(TeachingAllView, self).get_context_data(**kwargs)
+    context['teaching'] = teaching
     return context
 
 
-class ProjectView(DetailView):
+class ResearchAllView(TemplateView):
 
-  template_name = "project_detail.html"
-  model = Project
-
-  def get_context_data(self, **kwargs):
-    context = super(ProjectView, self).get_context_data(**kwargs)
-    return context
-
-
-class ExperienceAllView(TemplateView):
-
-  template_name = "experience_all.html"
+  template_name = "research_all.html"
 
   def get_context_data(self, **kwargs):
-    experiences = Experience.objects.active.order_by('order')
-    context = super(ExperienceAllView, self).get_context_data(**kwargs)
-    context['experiences'] = experiences
-    return context
-
-
-class ExperienceView(DetailView):
-
-  template_name = "experience_detail.html"
-  model = Experience
-
-  def get_context_data(self, **kwargs):
-    context = super(ExperienceView, self).get_context_data(**kwargs)
+    research = Research.objects.active.order_by('order')
+    context = super(ResearchAllView, self).get_context_data(**kwargs)
+    context['research'] = research
     return context
 
 

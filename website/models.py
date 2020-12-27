@@ -37,7 +37,7 @@ class FeatureManager(models.Manager):
 
 
 class FeatureMixin(models.Model):
-    """ Mixin with common fields for Capability, Project and Staff  """
+    """ Mixin with common fields for Teaching and Research  """
 
     class Meta:
         abstract = True
@@ -46,34 +46,12 @@ class FeatureMixin(models.Model):
 
     title = models.CharField(max_length=64)
     subtitle = models.CharField(max_length=64, blank=True, null=True)
-    image = models.ImageField(
-            'Index Page Image',
-            upload_to='images',
-            height_field=None,
-            width_field=None,
-            null=True,
-            blank=True,
-            help_text='Model Image',
-            )
-    wide_image = models.ImageField(
-            'Detail Page Image',
-            upload_to='images',
-            height_field=None,
-            width_field=None,
-            null=True,
-            blank=True,
-            )
     slug = AutoSlugField(
             populate_from='generate_slug',
             unique=True,
             help_text='URL key for the instance (automatically populated from title). You should generally not change this field as you\'ll break deep links to the instance.',
             )
-    body = HTMLField(max_length=64 * 1024, blank=True, null=True)
-    short_description = models.CharField(
-            max_length=500,
-            default='',
-            help_text='Brief description to show in smaller content areas',
-            )
+    body = models.CharField(max_length=64 * 1024)
     featured = models.IntegerField(
             'Display',
             choices=FEATURED_CHOICES,
@@ -91,24 +69,24 @@ class FeatureMixin(models.Model):
         return "{0} - {1}".format(self.title, self.subtitle)
 
 
-class Project(FeatureMixin):
-    """ Project model  """
+class Research(FeatureMixin):
+    """ Research model  """
 
     def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
-        return ('projects', [self.slug])
+        return ('research', [self.slug])
 
 
-class Experience(FeatureMixin):
-    """ Experience model  """
+class Teaching(FeatureMixin):
+    """ Teaching model  """
 
     def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
-        return ('experience', [self.slug])
+        return ('teaching', [self.slug])
 
 
 class Resume(models.Model):

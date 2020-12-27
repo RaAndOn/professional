@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load flatblocks %}
+{% block 'main_content' %}
+  <div class="all-research">
+    <div class="row">
+      <div class="col-sm-12 home-name-container">
+        <h1>Research</h1>
+      </div>
+    </div>
+    <div class="container">
+      {% for research in researchs %}
+      <div class="item row">
+        <div class="col-sm-12">
+          <h1><a href="{{ research.slug }}">{{ research.title }} - {{ research.subtitle }}</a></h1>
+          <p class="description">{{ research.body }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+{% endblock %}

@@ -60,34 +60,16 @@ img.centered {
   padding: 20px;
 }
 
-.all-projects .container img, .all-experience .container img {
+.all-teaching .container img, .all-research .container img {
   width: 100%;
 }
 
-.all-projects .container .item, .all-experience .container .item {
+.all-teaching .container .item, .all-research .container .item {
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
-.all-projects .container .item .description, .all-experience .container .item .description {
-  font-family: Arial;
-  font-size: 24px;
-}
-
-.detail-project .container img, .detail-experience .container img {
-  width: 100%;
-}
-
-.detail-project .description, .detail-experience .description {
-  padding: 40px;
-}
-
-.detail-project .header, .detail-experience .header {
-  background-color: grey;
-  padding: 100px;
-}
-
-.detail-project p, .detail-experience p {
+.all-teaching .container .item .description, .all-research .container .item .description {
   font-family: Arial;
   font-size: 24px;
 }
