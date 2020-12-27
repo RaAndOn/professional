@@ -8,10 +8,16 @@ from website import models
 from tinymce.widgets import TinyMCE
 from reversion.admin import VersionAdmin
 
+from django import forms
+from tinymce.widgets import TinyMCE
+
+
 class ProjectAdminForm(forms.ModelForm):
+    short_description = forms.CharField(widget=TinyMCE())
+    body = forms.CharField(widget=TinyMCE())
+
     class Meta:
         model = models.Project
-        widgets = {'short_description': TinyMCE,}
         exclude = ()
 
 
@@ -33,9 +39,11 @@ admin.site.register(models.Project, ProjectAdmin)
 
 
 class ExperienceAdminForm(forms.ModelForm):
+    short_description = forms.CharField(widget=TinyMCE())
+    body = forms.CharField(widget=TinyMCE())
+
     class Meta:
         model = models.Experience
-        widgets = {'short_description': TinyMCE,}
         exclude = ()
 
 

@@ -68,7 +68,7 @@ class FeatureMixin(models.Model):
             unique=True,
             help_text='URL key for the instance (automatically populated from title). You should generally not change this field as you\'ll break deep links to the instance.',
             )
-    body = HTMLField(max_length=64 * 1024, blank=True, null=True)
+    body = models.CharField(max_length=64 * 1024, blank=True, null=True)
     short_description = models.CharField(
             max_length=500,
             default='',

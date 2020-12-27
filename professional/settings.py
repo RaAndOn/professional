@@ -175,19 +175,21 @@ ADMIN_URL_PREFIX = '/admin/'
 ################################################################
 ####                         TinyMCE                         ###
 ################################################################
-TINYMCE_COMPRESSOR = False
+TINYMCE_COMPRESSOR = False # This needs to be False it doesn't work
 TINYMCE_DEFAULT_CONFIG = {
-    'theme': "advanced",
-    'relative_urls': False,
-    'convert_urls' : False,
-    'width': '750px',
-    'height': '350px',
-    'forced_root_block': "",
-    'plugins': 'advlist, lists, spellchecker',
-    'theme_advanced_buttons1': 'bold,italic,underline,strikethrough,|,sub,sup,|,fontselect,fontsizeselect,formatselect,|,forecolor,backcolor,|,charmap',
-    'theme_advanced_buttons2': 'bullist,numlist,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,image,|,outdent,indent,|,undo,redo,|,visualaid,removeformat,cleanup,code,spellchecker,help',
+    "height": "320px",
+    "width": "960px",
+    "menubar": "file edit view insert format tools table help",
+    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+    "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
+    "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
+    "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
+    "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
+    "a11ycheck ltr rtl | showcomments addcomment code",
+    "custom_undo_redo_levels": 10,
 }
-# TINYMCE_SPELLCHECKER = True
+TINYMCE_SPELLCHECKER = True
 
 if not development:
   SECURE_SSL_REDIRECT = True
