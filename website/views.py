@@ -27,15 +27,6 @@ class ContactView(TemplateView):
     return context
 
 
-class AboutView(TemplateView):
-
-  template_name = "about.html"
-
-  def get_context_data(self, **kwargs):
-    context = super(AboutView, self).get_context_data(**kwargs)
-    return context
-
-
 class TeachingAllView(TemplateView):
 
   template_name = "teaching_all.html"
@@ -55,13 +46,4 @@ class ResearchAllView(TemplateView):
     research = Research.objects.active.order_by('order')
     context = super(ResearchAllView, self).get_context_data(**kwargs)
     context['research'] = research
-    return context
-
-
-class ResumeView(TemplateView):
-
-  template_name = "resume.html"
-
-  def get_context_data(self, **kwargs):
-    context = super(ResumeView, self).get_context_data(**kwargs)
     return context

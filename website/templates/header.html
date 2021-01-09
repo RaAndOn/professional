@@ -6,16 +6,13 @@
         <a href="{% url 'home' %}">Home</a>
       </li>
       <li>
-        <a href="{% url 'about' %}">About Me</a>
-      </li>
-      <li>
         <a href="{% url 'teaching' %}">Teaching</a>
       </li>
       <li>
         <a href="{% url 'research' %}">Research</a>
       </li>
       <li>
-        <a href="{% get_media_prefix %}{{ resume.document }}" download="MichelleXiyueLiResume">R&eacute;sum&eacute;</a>
+        <a href="{% get_media_prefix %}{{ cv.document }}" download="MichelleXiyueLiCV">CV</a>
       </li>
       <li>
         <a href="{% url 'contact' %}">Contact Me</a>
@@ -36,16 +33,13 @@
             <a href="{% url 'home' %}">Home</a>
           </li>
           <li>
-            <a href="{% url 'about' %}">About Me</a>
-          </li>
-          <li>
             <a href="{% url 'teaching' %}">Teaching</a>
           </li>
           <li>
             <a href="{% url 'research' %}">Research</a>
           </li>
           <li>
-            <a href="{% get_media_prefix %}{{ resume.document }}" download="MichelleXiyueLiResume">R&eacute;sum&eacute;</a>
+            <a href="{% get_media_prefix %}{{ cv.document }}" download="MichelleXiyueLiCV">CV</a>
           </li>
           <li>
             <a href="{% url 'contact' %}">Contact Me</a>

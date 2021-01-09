@@ -1,5 +1,5 @@
-from website.models import Resume
+from website.models import CV
 
-def resume_context(request):
-  resume = Resume.objects.first()
-  return { 'resume': resume }
+def cv_context(request):
+  cv = CV.objects.first()
+  return { 'cv': cv }

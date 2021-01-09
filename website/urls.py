@@ -8,7 +8,6 @@ from . import views
 urlpatterns = [
 	url(r'^$', views.HomeView.as_view(), name='home'),
   url(r'^contact/$', views.ContactView.as_view(), name='contact'),
-  url(r'^about/$', views.AboutView.as_view(), name='about'),
   url(r'^research/$', views.ResearchAllView.as_view(), name='research'),
   url(r'^teaching/$', views.TeachingAllView.as_view(), name='teaching'),
   path('tinymce/', include('tinymce.urls')),

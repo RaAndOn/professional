@@ -21,11 +21,10 @@ class ResearchAdminForm(forms.ModelForm):
 
 
 class ResearchAdmin(VersionAdmin):
-    list_display = ('id', 'title', 'subtitle', 'slug', 'order', 'featured', 'modified_datetime',)
-    list_editable = ('title', 'subtitle', 'order', 'featured',)
+    list_display = ('id', 'title', 'order', 'featured', 'modified_datetime',)
+    list_editable = ('title', 'order', 'featured',)
     fields = (
         'title',
-        'subtitle',
         'body',
         'featured',
         )
@@ -44,11 +43,10 @@ class TeachingAdminForm(forms.ModelForm):
 
 
 class TeachingAdmin(VersionAdmin):
-    list_display = ('id', 'title', 'subtitle', 'slug', 'order', 'featured', 'modified_datetime',)
-    list_editable = ('title', 'subtitle', 'order', 'featured',)
+    list_display = ('id', 'title', 'order', 'featured', 'modified_datetime',)
+    list_editable = ('title', 'order', 'featured',)
     fields = (
         'title',
-        'subtitle',
         'body',
         'featured',
         )
@@ -57,16 +55,16 @@ class TeachingAdmin(VersionAdmin):
 admin.site.register(models.Teaching, TeachingAdmin)
 
 
-class ResumeAdminForm(forms.ModelForm):
+class CVAdminForm(forms.ModelForm):
     class Meta:
-        model = models.Resume
+        model = models.CV
         exclude = ()
 
-class ResumeAdmin(VersionAdmin):
+class CVAdmin(VersionAdmin):
     list_display = ('uploaded_at',)
     fields = (
         'document',
         )
-    form = ResumeAdminForm
+    form = CVAdminForm
 
-admin.site.register(models.Resume, ResumeAdmin)
+admin.site.register(models.CV, CVAdmin)

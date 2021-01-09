@@ -45,12 +45,6 @@ class FeatureMixin(models.Model):
     objects = FeatureManager()
 
     title = models.CharField(max_length=64)
-    subtitle = models.CharField(max_length=64, blank=True, null=True)
-    slug = AutoSlugField(
-            populate_from='generate_slug',
-            unique=True,
-            help_text='URL key for the instance (automatically populated from title). You should generally not change this field as you\'ll break deep links to the instance.',
-            )
     body = models.CharField(max_length=64 * 1024)
     featured = models.IntegerField(
             'Display',
@@ -89,9 +83,9 @@ class Teaching(FeatureMixin):
         return ('teaching', [self.slug])
 
 
-class Resume(models.Model):
+class CV(models.Model):
     def __unicode__(self):
-        return "Resume"
+        return "CV"
 
     objects = FeatureManager()
 
