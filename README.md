@@ -30,21 +30,27 @@ import it to the settings, otherwise use the 'os.environ.get('')'
   `$ heroku domains:add www.joshua-raanan.com -a joshua-raanan-professional`
   `$ heroku domains:add joshua-raanan.com -a joshua-raanan-professional`
 
+Heroku will then assign the URL a dns target for each of your domains. You can find this on the command line
+immediately after running the command, or on the application's heroku page. The target should have `herokudns.com`
+in it.
+
 Go to Hover and under the DNS tab add 2 new settings:
 
   Hover -> DNS
   TYPE: CNAME
   HOST: www
-  VALUE: www.joshua-raanan.com.herokudns.com
+  VALUE: <WWW-HEROKUDNS-TARGET>
 
   Hover -> DNS
   TYPE: CNAME
   HOST: @
-  VALUE: joshua-raanan.com.herokudns.com
+  VALUE: <HEROKUDNS-TARGET>
 
 ### Add SSL:
 
-Heroku is capable of handling SSL for you, simply use the command:
+Heroku is capable of handling SSL for you. However, to do so you will need to upgrade the application to "hobby" which
+which is not free. To do this go into the website's Heroku page, click "Resources->"Change Dyno Type" and select
+"hobby." Then simply use the command:
 
   `$ heroku certs:auto:enable`
 
@@ -96,7 +102,7 @@ Locally the uploaded images are stored in the `media/` folder
 Create a file called `development_settings.py` with the following contents:
 
 ```
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 SECRET_KEY = "ThisIsntTheActualSecretKey"
 ```
