@@ -46,6 +46,15 @@ Go to Hover and under the DNS tab add 2 new settings:
   HOST: @
   VALUE: <HEROKUDNS-TARGET>
 
+### Domain Forwarding
+
+I recommend forwarding the domain without `www.` to the domain with `www.`. To do this, go to Hover and click
+`Forwards`. Add a Forward:
+
+  Domain: joshua-raanan.com
+  Select a Forward Type: joshua-raanan.com
+  Forwarding To: www.joshua-raanan.com
+
 ### Add SSL:
 
 Heroku is capable of handling SSL for you. However, to do so you will need to upgrade the application to "hobby" which
