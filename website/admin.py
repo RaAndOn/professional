@@ -77,3 +77,18 @@ class ResumeAdmin(VersionAdmin):
     form = ResumeAdminForm
 
 admin.site.register(models.Resume, ResumeAdmin)
+
+
+class HomeImageAdminForm(forms.ModelForm):
+    class Meta:
+        model = models.HomeImage
+        exclude = ()
+
+class HomeImageAdmin(VersionAdmin):
+    list_display = ('uploaded_at',)
+    fields = (
+        'image',
+        )
+    form = HomeImageAdminForm
+
+admin.site.register(models.HomeImage, HomeImageAdmin)

@@ -119,3 +119,13 @@ class Resume(models.Model):
 
     document = models.FileField(upload_to='documents')
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+
+class HomeImage(models.Model):
+    def __unicode__(self):
+        return "HomeImage"
+
+    objects = FeatureManager()
+
+    image = models.FileField(upload_to='images')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
